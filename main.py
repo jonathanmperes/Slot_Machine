@@ -1,3 +1,6 @@
+MAX_LINES = 5
+MIN_LINES = 1
+
 def deposite():
   while True:
     amount = input("What would you like to deposit? $")
