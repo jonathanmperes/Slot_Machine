@@ -1,5 +1,5 @@
-MAX_LINES = 5
 MIN_LINES = 1
+MAX_LINES = 3
 
 def deposite():
   while True:
