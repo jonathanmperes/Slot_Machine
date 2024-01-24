@@ -12,4 +12,7 @@ def deposite():
 
   return amount
 
-deposite()
+def main():
+  amount = deposite()
+
+main()
