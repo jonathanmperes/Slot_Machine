@@ -22,6 +22,20 @@ def get_slot_machine_spin(rows, cols, symbols):
     for _ in range(symbol_count):
       all_symbols.append(symbol)
 
+  columns = []
+  for _ in range(cols):
+    column = []
+    current_symbol = all_symbols[:]
+    for _ in range(rows):
+      value = random.choice(current_symbol)
+      current_symbol.remove(value)
+      column.append(value)
+
+    columns.append(column)
+
+  return columns
+
+
 def deposite():
   while True:
     amount = input("What would you like to deposit? $")
@@ -35,6 +49,7 @@ def deposite():
       print("Please enter a number.")
 
   return amount
+
 
 def get_number_of_lines():
   while True:
@@ -50,6 +65,7 @@ def get_number_of_lines():
 
   return lines
 
+
 def get_bet():
   while True:
     amount = input("What would you like to bet on each line? $")
@@ -64,6 +80,7 @@ def get_bet():
 
   return amount
 
+
 def main():
   balance = deposite()
   lines = get_number_of_lines()
@@ -77,5 +94,6 @@ def main():
       break
 
   print(f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}.")
+  
 
 main()
