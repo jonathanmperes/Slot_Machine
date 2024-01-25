@@ -1,5 +1,6 @@
 MIN_LINES = 1
 MAX_LINES = 3
+MAX_BET = 100
 
 def deposite():
   while True:
