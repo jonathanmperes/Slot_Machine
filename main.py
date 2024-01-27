@@ -116,7 +116,7 @@ def get_bet():
   return amount
 
 
-def spin():
+def spin(balance):
   lines = get_number_of_lines()
   while True:
     bet = get_bet()
@@ -135,11 +135,19 @@ def spin():
   print(f"You won ${winnings}.")
   print(f"You won on lines:", *winning_lines)
 
-  return winning_lines - total_bet
+  return winnings - total_bet
 
 
 def main():
   balance = deposite()
+  while True:
+    print(f"Current balance is ${balance}")
+    answer = input("Press enter to play (q to quit).")
+    if answer == "q":
+      break
+    balance += spin(balance)
+
+  print(f"You left with ${balance}")
   
 
 main()
